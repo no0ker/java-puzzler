@@ -11,14 +11,14 @@ import org.junit.Test;
 public class Level_1 {
     @Test
     public void test() {
-        final TestInterfaceImpl testInterfaceImpl = new TestInterfaceImpl();
-        assertTrue(testInterfaceImpl.equals(testInterfaceImpl));
-        assertFalse(testInterfaceImpl.equals(""));
-        assertTrue(testInterfaceImpl.equals((Object)""));
+        final Impl impl = new Impl();
+        assertTrue(impl.equals(impl));
+        assertFalse(impl.equals(""));
+        assertTrue(impl.equals((Object)""));
     }
 }
 
-interface TestInterface {
+interface Interface {
     default void foo() {
     }
 
@@ -42,6 +42,6 @@ interface TestInterface {
     }
 }
 
-class TestInterfaceImpl implements TestInterface {
+class Impl implements Interface {
 
 }
