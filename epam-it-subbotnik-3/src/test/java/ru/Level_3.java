@@ -11,7 +11,17 @@ import org.junit.Test;
 public class Level_3 {
     @Test
     public void test() {
-        assertThat("1/2==" + 1 / 2, equalTo("1/2==0"));
-        assertThat("1/2==" + 1 / 2 == "1/2==0", equalTo(true));
+        assertThat(
+                "1/2==" + 1 / 2 == "1/2==0",
+                equalTo(true));
+        assertThat(
+                new String("111") == "111",
+                equalTo(false));
+        assertThat(
+                new String("111").intern() == "111",
+                equalTo(true));
+        assertThat(
+                "1" + "1" + "1" == "111",
+                equalTo(true));
     }
 }
